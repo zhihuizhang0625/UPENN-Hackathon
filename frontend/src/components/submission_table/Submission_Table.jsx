@@ -11,29 +11,29 @@ import Paper from "@mui/material/Paper";
 const List = () => {
   const rows = [
     {
-      id: 1143155,
+      id: 1,
       status: "Approved",
-      date: "1 March"
+      date: "Dec 28, 2021"
     },
     {
-      id: 2235235,
-      date: "1 March",
+      id: 2,
+      date: "Dec 28, 2021",
       status: "Pending"
     },
     {
-      id: 2342353,
+      id: 3,
       status: "Pending",
-      date: "1 March"
+      date: "Aug 11, 2022"
     },
     {
-      id: 2357741,
+      id: 4,
       status: "Approved",
-      date: "31 March",
+      date: "Aug 11, 2022",
     },
     {
-      id: 2342355,
+      id: 5,
       status: "Pending",
-      date: "1 March"
+      date: "Nov 23, 2022"
     },
   ];
   return (

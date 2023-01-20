@@ -31,7 +31,7 @@ const Single = () => {
             
                 </div>
                 <div className="detailItem">
-                  <span className="itemKey">This Prob:</span>
+                  <span className="itemKey">This Problem link:</span>
                   <span className="itemValue">https://leetcode.com/</span>
                 </div>
                 

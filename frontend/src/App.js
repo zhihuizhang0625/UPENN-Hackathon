@@ -13,13 +13,16 @@ import {Datatablesource} from "./datatablesource";
 import {Failedtablesource} from "./failedtablesource";
 import Airtable from "airtable";
 import ReviewList from "./pages/Reviewlist/Reviewlist";
+import { Reviewtablesource } from "./reviewtablesource";
+import { ChartGen } from "./components/chart/Chart";
 
 
 function App() {
   
   Datatablesource();
   Failedtablesource();
-
+  Reviewtablesource();
+  // ChartGen();
   const { darkMode } = useContext(DarkModeContext);
 
   return (

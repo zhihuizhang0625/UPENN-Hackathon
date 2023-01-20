@@ -8,11 +8,11 @@ var userRows = [];
 var submissionRows = [];
 
 
-export function Failedtablesource() {
+export function Reviewtablesource() {
   
 
   useEffect(()=>{
-    base("failed_problems")
+    base("review_problems")
       .select({view: "Grid view"})
       .eachPage((records, fetchNextPage)=>{
     
@@ -72,12 +72,12 @@ export const userColumns = [
   {
     field: "difficulty",
     headerName: "Difficulty",
-    width: 100,
+    width: 150,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 100,
+    width: 150,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
@@ -89,7 +89,7 @@ export const userColumns = [
   {
     field: "submission times",
     headerName: "Submission Times",
-    width: 130,
+    width: 210,
   },
 ];
 
