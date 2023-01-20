@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState(userRows[0].concat(userRows[1]));
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
