@@ -1,5 +1,11 @@
 import requests
 import json
+import pandas as pd
+from datetime import datetime
+from datetime import date
+import random
+
+
   
 
 
@@ -245,7 +251,7 @@ def update_records2(sub1_status = None, sub1_time = None, sub2_status = None, su
   } 
 
     r= requests.patch(endpoint, json = data, headers = headers)
-    print(endpoint)
+    #print(endpoint)
     
     print(r)
     
@@ -270,51 +276,67 @@ def load_sample():
     data = json.load(f)
     failed_data = json.load(f2)
       
-    #print(data)
+    #create review history
+    reviewlist = []
+
     # Iterating through the json
     # list
     for i in data:
       add_to_airtable1(i['title'], i['link'],i['difficulty'],i['status'],str(i['submission_history']),i['submission_times'], 'summary')
-      
-
+     
       #create submission history
       #if(len(i['submission_history']) < 5):
 
       sub_status = []
       sub_time = []
+      
       num = len(i['submission_history'])
 
       
       for j in range(num):
           #print(j)
-        if(j >= 5): break
-        else:
-          sub_status.append(i['submission_history'][-(j+1)]['submission_status'])
-          print(sub_status[j])
-          sub_time.append(i['submission_history'][-(j+1)]['submission_time'])
+       if(j >= 5): break
+       else:
+         sub_status.append(i['submission_history'][-(j+1)]['submission_status'])
+         #print(sub_status[j])
+         sub_time.append(i['submission_history'][-(j+1)]['submission_time'])
 
       if num < 5:    
-        for k in range(num , 5) :
-          sub_status.append(None)
-          sub_time.append(None)
+       for k in range(num , 5) :
+         sub_status.append(None)
+         sub_time.append(None)
 
       add_to_airtable2(i['title'],sub_status[0], sub_time[0], sub_status[1], sub_time[1], sub_status[2], sub_time[2], sub_status[3], sub_time[3], sub_status[4], sub_time[4], 'submission_history')
 
-  
-    #create review history
-    reviewlist = []
-    #for m in range(5):
-      #if(not sub_status[m].contains("Accepted")):
-        #reviewlist.append(i)
+      #if the last submission is before a month, need to review
+      sub_time_num = datetime.strptime(sub_time[0], '%b %d, %Y')
+      today = date.today()
+      if(sub_time_num < today - pd.DateOffset(months=2)):
+      #print('time is out')
+        reviewlist.append(i)
+      elif ((sub_status[0] is None) or (sub_status[1] is None)):
+       reviewlist.append(i)
+      elif (("Accepted" not in sub_status[0]) or ("Accepted" not in sub_status[1])):
+       reviewlist.append(i)
+
+     
+
+     
+    #print(reviewlist)
+   
 
 
 
    
     
     #create failed problems
-  
-    add_to_airtable1(i['title'], i['link'],i['difficulty'],i['status'],str(i['submission_history']),i['submission_times'], 'failed_problems')
-      
+    for toFail in failed_data:
+      add_to_airtable1(toFail['title'], toFail['link'],toFail['difficulty'],toFail['status'],str(toFail['submission_history']),toFail['submission_times'], 'failed_problems')
+     
+    #upload review problems
+    for toReview in random.choices(reviewlist, k=10):
+      add_to_airtable1(toReview['title'], toReview['link'],toReview['difficulty'],toReview['status'],str(toReview['submission_history']),toReview['submission_times'], 'review_problems')
+
                  
 
 
