@@ -15,10 +15,10 @@ export function Datatablesource() {
     base("summary")
       .select({view: "Grid view"})
       .eachPage((records, fetchNextPage)=>{
-    
+        var arr = [];
         console.log(records);
         for(var i = 0; i<records.length; i++){
-          userRows[i] ={
+          arr[i] ={
             "id": i+1,
             "problem": String(records[i].fields.title),
             "img": "https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png",
@@ -27,7 +27,7 @@ export function Datatablesource() {
             "submission times": String(records[i].fields.submission_times)
         }
  }
-
+        userRows.push(arr);
         fetchNextPage();
       })
       base("submission_history")
