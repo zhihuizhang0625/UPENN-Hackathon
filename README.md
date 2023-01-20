@@ -18,7 +18,6 @@ Linpei Luo
 Rya Liu
 
 
-
 ## Functions
 - Daily, Weekly, Monthly Stats
 - Show leetcode problem record with name, difficulty level, status(pass/fail), time completed, practice times
@@ -57,12 +56,14 @@ Data Fetch: Airtable API
       Step 7: type "npm start" in terminal and run
       
 Note：The chart in the dashbord may take some time to show; if continue have no diagram in the chart, try compile the chart in component folder
-      
+ 
+## Featues to be updated
+- User Login and Logout
+- Daily Goal setup and completeness
+- Last 5 Submission History Degtails
       
 ## Links
 
-🔗Website Link:
-      
+🔗Website Link:https://leetcodediary.netlify.app     
 
-🔗Presentation:
-
+🔗Presentation:https://youtu.be/Py9Rcv3Xdgw
