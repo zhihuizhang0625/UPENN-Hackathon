@@ -88,7 +88,7 @@ export const userColumns = [
   },
   {
     field: "submission times",
-    headerName: "Sumission Times",
+    headerName: "Submission Times",
     width: 130,
   },
 ];

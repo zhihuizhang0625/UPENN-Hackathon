@@ -39,9 +39,7 @@ const Failedtable = () => {
     <div className="datatable">
       <div className="datatableTitle">
         Failed Problems
-        <Link to="/users/new" className="link">
-          Add New
-        </Link>
+      
       </div>
       <DataGrid
         className="datagrid"

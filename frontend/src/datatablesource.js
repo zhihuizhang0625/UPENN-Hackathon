@@ -15,10 +15,9 @@ export function Datatablesource() {
     base("summary")
       .select({view: "Grid view"})
       .eachPage((records, fetchNextPage)=>{
-        var arr = [];
         console.log(records);
         for(var i = 0; i<records.length; i++){
-          arr[i] ={
+          userRows[i] ={
             "id": i+1,
             "problem": String(records[i].fields.title),
             "img": "https://user-images.githubusercontent.com/36547915/97088991-45da5d00-1652-11eb-900f-80d106540f4f.png",
@@ -27,7 +26,8 @@ export function Datatablesource() {
             "submission times": String(records[i].fields.submission_times)
         }
  }
-        userRows.push(arr);
+        console.log(userRows)
+        // userRows.push(arr);
         fetchNextPage();
       })
       base("submission_history")
@@ -58,7 +58,7 @@ export const userColumns = [
   {
     field: "problem",
     headerName: "Problem",
-    width: 330,
+    width: 370,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -72,12 +72,12 @@ export const userColumns = [
   {
     field: "difficulty",
     headerName: "Difficulty",
-    width: 100,
+    width: 150,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 100,
+    width: 150,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
@@ -88,9 +88,9 @@ export const userColumns = [
   },
   {
     field: "submission times",
-    headerName: "Sumission Times",
-    width: 130,
-  },
+    headerName: "Submission Times",
+    width: 210,
+  }
 ];
 
 //test

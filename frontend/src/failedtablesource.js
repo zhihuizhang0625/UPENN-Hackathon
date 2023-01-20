@@ -27,7 +27,7 @@ export function Failedtablesource() {
             "submission times": String(records[i].fields.submission_times)
         }
  }
-
+        console.log(userRows);
         fetchNextPage();
       })
       base("submission_history")
@@ -58,7 +58,7 @@ export const userColumns = [
   {
     field: "problem",
     headerName: "Problem",
-    width: 330,
+    width: 370,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
@@ -72,12 +72,12 @@ export const userColumns = [
   {
     field: "difficulty",
     headerName: "Difficulty",
-    width: 100,
+    width: 150,
   },
   {
     field: "status",
     headerName: "Status",
-    width: 100,
+    width: 150,
     renderCell: (params) => {
       return (
         <div className={`cellWithStatus ${params.row.status}`}>
@@ -88,8 +88,8 @@ export const userColumns = [
   },
   {
     field: "submission times",
-    headerName: "Sumission Times",
-    width: 130,
+    headerName: "Submission Times",
+    width: 210,
   },
 ];
 

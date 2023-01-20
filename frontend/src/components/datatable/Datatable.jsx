@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows[0].concat(userRows[1]));
+  const [data, setData] = useState(userRows);
+  console.log(userRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
-
   const actionColumn = [
     {
       field: "action",
@@ -37,9 +37,7 @@ const Datatable = () => {
     <div className="datatable">
       <div className="datatableTitle">
         Problem History
-        <Link to="/users/new" className="link">
-          Add New
-        </Link>
+        
       </div>
       <DataGrid
         className="datagrid"
