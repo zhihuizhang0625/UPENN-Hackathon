@@ -2,7 +2,7 @@
 
 ## Overview
 
-MyLeetcodeDiary is a tool to keep your leetcode practice history. The web aspp web app keeps track of user's activity on leetcode.com and provides review suggestions.
+MyLeetcodeDiary is a tool to keep your leetcode practice history. The web app keeps track of user's activity on leetcode.com and provides review suggestions.
 
 It is based on React(Javascript) for front-end, Python for back-end, Airtable for database and Node.js. 
 
