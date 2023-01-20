@@ -2,9 +2,9 @@
 
 ## Overview
 
-MyLeetcodeDiary is a tool 
+LeetcodeDiary is a web app that keep track of user's activity on leetcode.com and provide revise suggestions.
 
-To use MyLeetcodeDiary, users need to
+To use LeetcodeDiary, the user needs to 
 
 ## Team Members
 
