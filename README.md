@@ -28,7 +28,7 @@ Qingzi Fu
 
 Front end: React +
 
-Back end:
+Back end: First, We use Selenium to fetch data from Leetcode. Then we use Airtable api and requests library from python to save our data in Airtable to be published to Front end.
 
 Deploy: Netlify
 
