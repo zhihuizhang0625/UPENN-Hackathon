@@ -52,7 +52,7 @@ Data Fetch: Airtable API
       
       Step 7: type "npm start" in terminal and run
       
-## Note：The chart in the dashbord may take some time to show; if continue have no diagram in the chart, try compile the chart in component folder
+Note：The chart in the dashbord may take some time to show; if continue have no diagram in the chart, try compile the chart in component folder
       
       
 ## Links
