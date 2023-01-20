@@ -2,7 +2,7 @@
 
 ## Overview
 
-LeetcodeDiary is a web app that keep track of user's activity on leetcode.com and provide revise suggestions.
+LeetcodeDiary is a web app that keep track of user's activity on leetcode.com and provide review suggestions.
 
 To use LeetcodeDiary, the user needs to 
 
