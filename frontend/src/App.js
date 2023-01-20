@@ -22,7 +22,7 @@ function App() {
   Datatablesource();
   Failedtablesource();
   Reviewtablesource();
-  ChartGen();
+  // ChartGen();
   
   const { darkMode } = useContext(DarkModeContext);
 
