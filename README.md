@@ -2,7 +2,11 @@
 
 ## Overview
 
-MyLeetcodeDiary is a tool to keep your leetcode practice history. It is based on React(Javascript) for front-end, Python for back-end, Airtable for database and Node.js. Special function includes a comlepte practice history, a list of problems that's still not successfully solved, and most importantly -- a smart recommendation for review problems based on forgetting curve and other better memorization skills.
+MyLeetcodeDiary is a tool to keep your leetcode practice history. The web aspp web app keeps track of user's activity on leetcode.com and provides review suggestions.
+
+It is based on React(Javascript) for front-end, Python for back-end, Airtable for database and Node.js. 
+
+Special function includes a comlepte practice history, a list of problems that's still not successfully solved, and most importantly -- a smart recommendation for review problems based on forgetting curve and other better memorization skills.
 
 
 ## Team Members
